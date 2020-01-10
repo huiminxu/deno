@@ -34,7 +34,7 @@ jobs:
         uses: actions/checkout@v1
         with:
           fetch-depth: 1
-          submodules: true
+          submodules: recursive
 
       - name: Create source tarballs (release, linux)
         if: startsWith(matrix.os, 'ubuntu') && matrix.kind == 'test' && startsWith(github.ref, 'refs/tags/') && github.repository == 'denoland/deno'
@@ -126,6 +126,10 @@ jobs:
       - name: Build
         if: matrix.kind == 'test' || matrix.kind == 'bench'
         run: cargo build --release --locked --all-targets
+
+      - name: Size
+        if: matrix.kind == 'test' || matrix.kind == 'bench'
+        run: ls -lh target/*
 
       - name: Test
         if: matrix.kind == 'test'
