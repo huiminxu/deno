@@ -1094,7 +1094,6 @@ dependencies = [
 [[package]]
 name = "rusty_v8"
 version = "0.0.24"
-source = "registry+https://github.com/rust-lang/crates.io-index"
 dependencies = [
  "bitflags 1.2.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "cargo_gn 0.0.15 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -1102,6 +1101,12 @@ dependencies = [
  "libc 0.2.66 (registry+https://github.com/rust-lang/crates.io-index)",
  "which 3.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
+
+[[package]]
+name = "rusty_v8"
+version = "0.0.24"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+replace = "rusty_v8 0.0.24"
 
 [[package]]
 name = "rustyline"
