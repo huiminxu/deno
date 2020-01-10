@@ -8,4 +8,6 @@
 	shallow = true
 [submodule "rusty_v8"]
 	path = rusty_v8
-	url = git@github.com:denoland/rusty_v8
+	fetchRecurseSubmodules = true
+	url = https://github.com/denoland/rusty_v8.git
+	shallow = true
